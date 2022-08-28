@@ -5,7 +5,7 @@
 
 This is a visualization for weather data analysis.Data was pulled from the OpenWeatherMap API and analyzed looking at the effect of a city's latitude on various weather patterns including max temperature, humidity, cloudiness, and wind speed.
 
-After the data were extracted from the API, Matplotlib was used to plot city latitude vs a respecitve weather pattern. This site contains the plots created in that analysis along with a brief description of each plot and any trends that could be observed. Below is the summary of the findings as per the weather pattern close to and away from the equator as described below
+After the data were extracted from the API, Matplotlib was used to plot city latitude vs a respecitve weather pattern. This site contains the plots created in that analysis along with a brief description of each plot and any trends that could be observed. Below is the summary of the findings as per the weather pattern close to and away from the equator as described below:
 
 ### Findings
 
