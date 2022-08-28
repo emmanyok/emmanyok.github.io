@@ -9,7 +9,7 @@ After the data were extracted from the API, Matplotlib was used to plot city lat
 
 ### Findings
 
-## Temp
+## Temperature
 As expected, the weather becomes significantaly warmer as one approaches the equator (Zero Degrees Latitude). More interestingly, however, is the fact that the southern hemisphere tends to be warmer this time of the year than the northern hemisphere. This may be due to the tilt of the earth at the time of the year this data was gathered.
 
 ## Humidity
