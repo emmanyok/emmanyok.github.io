@@ -17,7 +17,7 @@ h_chart
 bubble_chart
 ![image](https://user-images.githubusercontent.com/105941870/191629402-30f7f1e0-4e8b-4cec-b00d-46edb19aba7c.png)
 
-Gauge chart: To create the gauge chart look through the value: washingFreq,title: {text: "Belly Button Washing Frequency<br>Scrubs per Week"},type: "indicator",mode: "gauge+number",gauge and the color definition(https://www.canva.com/colors/color-wheel/)  
+Gauge chart: To create the gauge chart look through the value: washingFreq,title: {text: "Belly Button Washing Frequency<br>Scrubs per Week"},type: "indicator",mode: "gauge+number",gauge and the color definition came from (https://www.canva.com/colors/color-wheel/)  
 gauge_chart
 <<<<<<< HEAD
 ![image](https://user-images.githubusercontent.com/105941870/191630169-602f8149-64ae-4fb9-a7aa-f6e111bd45d3.png)
