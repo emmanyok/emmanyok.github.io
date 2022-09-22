@@ -1,8 +1,8 @@
 function init() {
-    // A dropdown select element for the Dataset
+    // A dropdown panel to look through element for the Dataset
     var selector = d3.select("#selDataset");
   
-    // Sample names used for the append("options")
+    // append to look through the options
     d3.json("samples.json").then((data) => {
   
       var sampleNames = data.names;
@@ -21,32 +21,30 @@ function init() {
     });
   }
   
-  // Initialize the dashboard
+  // dashboard to look through the changes in the data
   init();
   
   function optionChanged(newSample) {
-    // Fetch new data each time a new sample is selected
+    // click through new data for new output
     buildMetadata(newSample);
     buildCharts(newSample);
     
   }
   
-  // Demographics Panel 
+  // Demographic info 
   function buildMetadata(sample) {
     d3.json("samples.json").then((data) => {
       var metadata = data.metadata;
-      // Filter the data for the object with the desired sample number
+      // Filter through the resultArray
       var resultArray = metadata.filter(sampleObj => sampleObj.id == sample);
       var result = resultArray[0];
-      // Use d3 to select the panel with id of `#sample-metadata`
+      // d3.select to look through sample metadata
       var PANEL = d3.select("#sample-metadata");
   
-      // Use `.html("") to clear any existing metadata
+      // Use panel.html to clear 
       PANEL.html("");
   
-      // Use `Object.entries` to add each key and value pair to the panel
-      // Hint: Inside the loop, you will need to use d3 to append new
-      // tags for each key-value in the metadata.
+      // Display each key-value pair from the metadata JSON object somewhere on the page.
       Object.entries(result).forEach(([key, value]) => {
         PANEL.append("h6").text(`${key.toUpperCase()}: ${value}`);
       });
@@ -54,16 +52,16 @@ function init() {
     });
   }
   
-  // Create the buildCharts function.
+  // buildCharts function
   function buildCharts(sample) {
-    // Use d3.json to load and retrieve the samples.json file 
+    // Use d3.json collects the samples.json file 
     d3.json("samples.json").then((data) => {
       console.log(data);
-      // Create a variable that holds the samples array. 
+      // variable to hold samples array. 
       var samples = data.samples;
       // Create a variable that filters the samples for the object with the desired sample number.
       var resultsArray = samples.filter(obj => obj.id == sample);
-      // Create a variable that holds the first sample in the array.
+      // first sample in the array.
       var result = resultsArray[0];
       // Use `otu_ids` as the labels for the bar chart.
       // Use `otu_labels` as the hovertext for the chart.
@@ -81,7 +79,8 @@ function init() {
       
     
     
-      // Create the yticks for the bar chart.
+      // Create a horizontal bar chart with a dropdown menu to display the top 10 OTUs found in that individual.
+      //Create the yticks for the bar chart.
       // Hint: Get the the top 10 otu_ids and map them in descending order  
       //  so the otu_ids with the most bacteria are last. 
   
@@ -103,7 +102,9 @@ function init() {
       };
       // Use Plotly to plot the data with the layout. 
       Plotly.newPlot("bar", [barData], barLayout);
+
   
+      // Create a bubble chart that displays each sample.
       // Create the trace for the bubble chart.
       var bubbleData = {
         x: otuIDs,
@@ -116,14 +117,14 @@ function init() {
         }
       };
       
-      // Create the layout for the bubble chart.
+      // layout for the bubble chart.
       var bubbleLayout = {
         title: "Bacteria Cultures Per Sample",
         xaxis: {title: "OTU ID"},
         showlegend: false
       };
       
-      // Use Plotly to plot the data with the layout.
+      // Use Plotly to plot the data.
       Plotly.newPlot("bubble", [bubbleData], bubbleLayout);   
   
   
